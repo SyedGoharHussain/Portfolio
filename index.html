@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gohar's Portfolio</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #1e1e2f, #3b1d57);
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 1.2rem 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(10px);
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+            margin: 0;
+            color: #bb86fc;
+            animation: slideIn 1.5s ease-out;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        nav ul li {
+            display: inline-block;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2rem;
+            position: relative;
+            padding: 5px 10px;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #bb86fc;
+            transform: scale(1.1);
+        }
+
+        nav ul li a::after {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 3px;
+            bottom: -3px;
+            left: 50%;
+            background-color: #bb86fc;
+            transform: translateX(-50%);
+            transition: width 0.3s ease-in-out;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 3rem 1rem;
+            margin: 1.5rem auto;
+            max-width: 900px;
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+            border-radius: 15px;
+            backdrop-filter: blur(15px);
+            transition: transform 0.3s ease;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .section:hover {
+            transform: translateY(-10px);
+        }
+
+        .section h2 {
+            text-align: center;
+            margin-top: 0;
+            color: #bb86fc;
+            font-size: 2.2rem;
+        }
+
+        .about-container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .profile-pic {
+            border-radius: 50%;
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border: 5px solid #bb86fc;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .profile-pic:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
+        }
+
+        section#achievements img {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        section#achievements img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            font-size: 1.1rem;
+            line-height: 2;
+            margin: 5px 0;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        ul li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #bb86fc;
+            font-size: 1.5rem;
+        }
+
+        a {
+            color: #bb86fc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #fff;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 1.5rem;
+        }
+
+        .social-links a {
+            color: #bb86fc;
+            font-size: 1.5rem;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            transform: scale(1.2);
+            color: #fff;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            background: rgba(0, 0, 0, 0.8);
+            margin-top: 20px;
+            color: #bb86fc;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-100%);
+            }
+
+            to {
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Gohar's Portfolio</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="about" class="section">
+        <h2>About Me</h2>
+        <div class="about-container">
+            <img src="n.jfif" alt="Gohar's Profile Picture" class="profile-pic">
+            <p>
+                Hi, I am Gohar, a 3rd-semester BSIT student at Air University with a CGPA of 3.63/4.00.
+                I am passionate about coding, developing applications, and solving real-world problems through
+                technology.
+            </p>
+        </div>
+    </section>
+
+    <section id="skills" class="section">
+        <h2>Skills</h2>
+        <ul>
+            <li>C++</li>
+            <li>MERN Stack</li>
+            <li>Socket Programming (Python)</li>
+            <li>Java</li>
+        </ul>
+    </section>
+
+    <section id="projects" class="section">
+        <h2>Projects</h2>
+        <ul>
+            <li><strong>Task Management System:</strong> Built using MERN stack.</li>
+            <li><strong>Bank and Bakery Management Systems:</strong> Developed in C++.</li>
+            <li><strong>Service Provider App:</strong> A functional app built with C++.</li>
+            <li><strong>Simple Chat Application:</strong> Created using Python and socket programming.</li>
+            <li><strong>Custom Browser:</strong> Developed in PyCharm.</li>
+        </ul>
+    </section>
+
+    <section id="achievements" class="section">
+        <h2>Achievements</h2>
+        <ul>
+            <li><strong>2nd Semester Topper:</strong> Achieved the highest SGPA in the batch, Spring 2024.</li>
+        </ul>
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-top: 1.5rem;">
+            <div style="flex: 1 1 45%; max-width: 45%; text-align: center;">
+                <img src="certificate.png" alt="Certificate 1"
+                    style="height: 300px; width: auto; border-radius: 10px; box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);">
+            </div>
+            <div style="flex: 1 1 45%; max-width: 45%; text-align: center;">
+                <img src="certpic.jpeg" alt="Certificate 2"
+                    style="height: 300px; width: auto; border-radius: 10px; box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);">
+            </div>
+        </div>
+    </section>
+
+
+
+    <section id="contact" class="section">
+        <h2>Contact Me</h2>
+        <p>Email: <a href="mailto:230930@students.au.edu.pk">230930@students.au.edu.pk</a></p>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/syed-gohar-hussain-95801a345/">LinkedIn</a>
+            <a href="https://github.com/SyedGoharHussain">GitHub</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Gohar. All Rights Reserved.</p>
+    </footer>
+</body>
+
+</html>
